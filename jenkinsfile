@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        jdk 'jdk11'           // match the name you gave in Global Tool Config
+    }
 
     stages {
         stage('Checkout') {
