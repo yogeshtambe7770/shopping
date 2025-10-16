@@ -13,6 +13,15 @@ pipeline {
                 ])
             }
         }
+
+        stage('Test') {
+            steps {
+                script {
+                    // Run TestNG tests via Maven
+                    sh 'mvn clean test -DsuiteXmlFile=testng.xml'
+                }
+            }
+        }
     }
 }
 
